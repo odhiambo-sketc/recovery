@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Client Recovery Engine — Recover Dormant Clients Into Advisory Retainers</title>
+    <meta name="description" content="A done-for-you system that reactivates dormant accounting clients into year-round advisory retainers. $3,500 setup, founding rate $2,500.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+    <style>
+        :root {
+            --bg: #0E0E0E;
+            --text: #E0E0E0;
+            --muted: #B0B0B0;
+            --dim: #888;
+            --line: #333;
+            --accent: #0F4C5C;
+            --accent-hover: #0B3A47;
+            --accent-soft: #7FB3C0;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ---- Reading progress bar ---- */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+            z-index: 100;
+            transition: width 0.08s linear;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* ---- Typography ---- */
+        h1 {
+            font-size: 2.4rem;
+            line-height: 1.25;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(120deg, #ffffff 0%, #ffffff 60%, var(--accent-soft) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-top: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            width: 100%;
+            background-color: var(--line);
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        h2.visible::after { transform: scaleX(1); }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-top: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .subhead {
+            font-size: 1.2rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        strong { color: #fff; }
+        em { color: #C8C8C8; }
+        a { color: var(--accent-soft); }
+
+        hr {
+            border: none;
+            border-top: 1px solid #222;
+            margin: 3rem 0;
+        }
+
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.6rem;
+        }
+
+        li {
+            margin-bottom: 0.85rem;
+            font-size: 1.05rem;
+        }
+
+        li strong { color: #fff; }
+
+        .objection {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #fff;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent);
+            margin: 2rem 0;
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            color: #C8C8C8;
+            font-style: italic;
+            font-size: 1.05rem;
+        }
+
+        blockquote p { margin-bottom: 0; }
+
+        .beat {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 2.5rem 0 1.5rem;
+            letter-spacing: -0.3px;
+        }
+
+        /* ---- CTA ---- */
+        .cta-wrap {
+            text-align: center;
+            margin: 3.5rem 0;
+        }
+
+        a.cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #fff;
+            padding: 1.25rem 2.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 6px;
+            font-size: 1.15rem;
+            letter-spacing: 0.3px;
+            position: relative;
+            transition: background-color 0.3s, transform 0.2s;
+            animation: ctaPulse 3s ease-in-out infinite;
+        }
+
+        a.cta-button:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            animation-play-state: paused;
+        }
+
+        @keyframes ctaPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(15, 76, 92, 0.55); }
+            50%      { box-shadow: 0 0 0 14px rgba(15, 76, 92, 0); }
+        }
+
+        .cta-sub {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--dim);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #222;
+            color: var(--dim);
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--dim);
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        /* ---- Reveal animations ---- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(26px);
+            transition:
+                opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-24px);
+            transition:
+                opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Hero loads immediately */
+        .hero-load {
+            animation: heroIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        .hero-load.delay-1 { animation-delay: 0.15s; }
+        .hero-load.delay-2 { animation-delay: 0.35s; }
+        .hero-load.delay-3 { animation-delay: 0.55s; }
+
+        @keyframes heroIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Stagger lists when revealed */
+        .stagger li { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .stagger.visible li:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.05s; }
+        .stagger.visible li:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.13s; }
+        .stagger.visible li:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.21s; }
+        .stagger.visible li:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.29s; }
+        .stagger.visible li:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.37s; }
+        .stagger.visible li:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.45s; }
+
+        /* ---- Mobile ---- */
+        @media (max-width: 600px) {
+            .container { padding: 2.5rem 1.5rem; }
+            h1 { font-size: 1.9rem; }
+            h2 { font-size: 1.45rem; }
+            h3 { font-size: 1.2rem; }
+            p, li { font-size: 1.02rem; }
+            .beat { font-size: 1.3rem; }
+            a.cta-button { padding: 1.1rem 1.6rem; font-size: 1.05rem; }
+        }
+
+        /* ---- Respect reduced motion ---- */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+            .reveal, .reveal-left, .hero-load, .stagger li {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            h2::after { transform: scaleX(1) !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+
+        <h1 class="hero-load">A Quiet Way To Turn The Clients You Already Have Into Year-Round Advisory Work — Without Selling, And Without A Single Email You Haven't Approved</h1>
+
+        <p class="subhead hero-load delay-1">I build it in 30 days. You approve every word. Clients who respond book a review call with you.</p>
+
+        <hr class="hero-load delay-2">
+
+        <p class="hero-load delay-3">You didn't study for years, pass grueling exams, and start your own practice to become a cold-calling salesperson.</p>
+
+        <p class="reveal">You started because you love solving complex financial puzzles. You wanted to give business owners true peace of mind, build a respected firm, and experience the freedom of being your own boss — no corporate bureaucracy, no 80-hour sweatshop weeks.</p>
+
+        <p class="reveal">And you built something real. A solid roster of 80… 150… 300 business clients who rely on your numbers. You handle their compliance, file their returns, keep the authorities off their backs, and turn your expertise into a living.</p>
+
+        <p class="beat reveal">Then comes May.</p>
+
+        <p class="reveal">Tax season ends. The cash flow spike flattens. The momentum stops, and your office goes dead quiet.</p>
+
+        <p class="reveal">Dozens of client files sit dormant on your server until next year's filing deadline. And you start doing the late-night mental math: payroll, software subscriptions, office lease, partner draws…</p>
+
+        <p class="reveal">Here's the thing nobody tells you when you run a small firm: <strong>relying solely on annual compliance filings is a trap.</strong></p>
+
+        <p class="reveal">One lost corporate account, one key employee resignation, or one slow summer, and the floor underneath your cash flow starts to crack.</p>
+
+        <p class="reveal">You know there is untapped revenue sitting inside your existing database. You know half your compliance clients <em>should</em> be paying you for quarterly management accounts, tax planning, or fractional CFO advisory.</p>
+
+        <p class="reveal">But every time you looked at "growth strategies" for accountants, you walked away disgusted. They offered cheesy social media templates, aggressive cold outreach, or bloated CRM software subscriptions that felt like taking on a second job. Worse, those tactics felt like a direct threat to the most valuable asset your practice owns: <strong>your professional reputation.</strong></p>
+
+        <p class="reveal">So you pushed it aside and went back to work.</p>
+
+        <p class="reveal"><strong>But what if there was a way to systematically reactivate your dormant client files — using the list you already have — with zero sales calls, zero extra admin work, and zero reputation risk?</strong></p>
+
+        <hr class="reveal">
+
+        <p class="objection reveal">"We get all our business from referrals."</p>
+
+        <p class="reveal">Most good practices do. And I'm not asking you to change that. Referrals bring you new compliance clients. They do nothing for the clients you already have, who trust you, aren't hearing from you between filing deadlines, and may be paying someone else for cash-flow help you could give them.</p>
+
+        <p class="reveal">The Engine doesn't look for strangers. It starts conversations with people who already know your name.</p>
+
+        <hr class="reveal">
+
+        <h2 class="reveal">I'm Not a CPA. I'm a Systems Architect.</h2>
+
+        <p class="reveal">My background isn't in tax law. I come from the world of complex systems engineering.</p>
+
+        <p class="reveal">A few years ago, after a severe head injury upended my previous trajectory, my brain was locked into survival mode. I couldn't handle chaos or high-pressure corporate games. To survive, I built a hyper-focused discipline around order, structure, and silent infrastructure. I learned to build backend architectures that run smoothly in the background without needing constant human intervention.</p>
+
+        <p class="reveal">When I started looking into professional service firms, I recognized a pattern among independent accountants: <strong>They were master practitioners, but their practice operations were completely exposed to seasonal volatility.</strong></p>
+
+        <p class="reveal">They didn't suffer from a lack of skill. They suffered because traditional marketing felt like a betrayal of their craft, and manual client follow-up was mathematically impossible with their workload.</p>
+
+        <p class="reveal">I realized accountants didn't need marketing advice. They needed a quiet, automated pipeline installed inside their practice. That is why I created <strong>The Client Recovery Engine</strong>.</p>
+
+        <hr class="reveal">
+
+        <h2 class="reveal">What Is The Client Recovery Engine?</h2>
+
+        <p class="reveal">It is a done-for-you client retention and reactivation system installed directly inside your existing workflow.</p>
+
+        <p class="reveal"><strong>Not a CRM software subscription</strong> you have to train your staff to use.<br>
+        <strong>Not a marketing course</strong> or a pile of PDFs.<br>
+        <strong>Not a social media agency retainer</strong> posting generic quotes on LinkedIn.</p>
+
+        <p class="reveal">Here is how it breaks down:</p>
+
+        <h3 class="reveal">Step 1: The Client-List Audit</h3>
+        <p class="reveal">We start with your compliance-only clients: current clients who file with you once a year and buy nothing else. (Lapsed clients—no filing in 12+ months—are a second list with a different message). I audit this list to identify who looks ready for more based on their last filing date, entity type, and current services.</p>
+        <ul class="stagger reveal">
+            <li><strong>I do:</strong> All the data segmentation, list scrubbing, and opportunity analysis.</li>
+            <li><strong>You do:</strong> Hand over a secure export of your past client list. That's it.</li>
+        </ul>
+
+        <h3 class="reveal">Step 2: Check-ins in Your Voice</h3>
+        <p class="reveal">I draft and install five short email sequences sent directly under your name. These notes are written specifically for accountants — calm, professional language that reads like a thoughtful 1-on-1 advisor note rather than a marketing broadcast. They highlight fiscal checkpoints, upcoming tax law shifts, or proactive health checks.</p>
+        <ul class="stagger reveal">
+            <li><strong>I do:</strong> Write 100% of the copy, set up the delivery triggers, and connect it to your existing tools (Xero, QuickBooks, Mailchimp, or direct SMTP).</li>
+            <li><strong>You do:</strong> Review and approve the copy in a single 20-minute call.</li>
+        </ul>
+
+        <h3 class="reveal">Step 3: Booked Conversations</h3>
+        <p class="reveal">When dormant clients receive these structured check-ins, they don't feel "sold to" — they feel cared for. The sequences guide interested clients directly to your calendar to book an "Annual Review Call" or select pre-packaged advisory tiers (Quarterly Tax Planning, Fractional CFO, or Monthly Bookkeeping upgrades).</p>
+        <ul class="stagger reveal">
+            <li><strong>I do:</strong> Manage the calendar integration and tracking architecture.</li>
+            <li><strong>You do:</strong> Conduct standard advisory reviews and collect monthly retainer fees.</li>
+        </ul>
+
+        <hr class="reveal">
+
+        <p class="objection reveal">"We don't have time for another tool."</p>
+        <p class="reveal">Your total time is one client-list export, one 20-minute approval call, and the review calls clients book.</p>
+
+        <p class="objection reveal">"We tried a CRM and nobody used it."</p>
+        <p class="reveal">That usually happens because a CRM asks busy people to log data every day. This asks nobody to log anything. It runs from one export; replies land in your inbox and bookings land in your calendar.</p>
+
+        <p class="objection reveal">"Won't this annoy my clients?"</p>
+        <p class="reveal">Nothing goes out that you haven't read and approved. Every note comes from your address, in your voice. Here is exactly what one looks like:</p>
+
+        <blockquote class="reveal-left">
+            <p>"Hi [Name], your filing went in back in [month] and I noticed we haven't spoken since. Before year-end is a good time to check whether anything about your numbers has changed and whether there's a tax-planning step worth taking now. If it's useful, I've set aside time on [dates]: [link]."</p>
+        </blockquote>
+
+        <p class="reveal">Replies go to your inbox. Anyone who asks to stop is removed immediately.</p>
+
+        <p class="objection reveal">"What happens to my client data?"</p>
+        <p class="reveal">I sign a confidentiality agreement before touching your data. The export is stored securely, used only for this build, and deleted the moment the sequences are approved. You approve everything that goes out; I don't claim to ensure compliance — that remains your firm's responsibility.</p>
+
+        <hr class="reveal">
+
+        <h2 class="reveal">What I Can Show You, And What I Can't</h2>
+
+        <p class="reveal">I don't have a case study of my own yet. That's why the first two firms get a founding-client rate.</p>
+
+        <p class="reveal">The closest evidence I've found: one accounting firm moved from ad-hoc follow-up to a systematic process and reported its signed-engagement rate rising from <strong>20% to 84%</strong>, with <strong>$250,000 in new annual recurring revenue</strong> over six months.</p>
+
+        <p class="reveal">Two caveats: the figures are vendor-reported, not independently audited, and that firm was following up on prospects, not reactivating existing clients. I'm showing it because it supports the principle that consistent follow-up recovers work that would otherwise go quiet. I'm not showing it so you'll expect those numbers.</p>
+
+        <p class="reveal">What I will do is track your results and give you the real numbers, good or bad.</p>
+
+        <hr class="reveal">
+
+        <h2 class="reveal">Everything Included in Your 30-Day Setup</h2>
+
+        <ol class="stagger reveal">
+            <li><strong>A client-list audit:</strong> Who's compliance-only, who's lapsed, who looks ready for more.</li>
+            <li><strong>Five short email sequences</strong> in your voice.</li>
+            <li><strong>Connected to your tools:</strong> Full integration with your existing practice software (Xero, QuickBooks, Mailchimp, or direct SMTP).</li>
+            <li><strong>A booking page</strong> for annual review calls, so clients can seamlessly schedule without phone tag.</li>
+            <li><strong>Three advisory packages</strong> scoped and priced so you can confidently offer quarterly tax planning and CFO services without guessing.</li>
+            <li><strong>21-Day Installation Guarantee:</strong> If we don't have the entire engine built, tested, and ready to launch within 21 business days, you don't pay a penny more.</li>
+        </ol>
+
+        <p class="reveal"><strong>The 30-day timeline:</strong> Week 1: audit. Week 2: copy and approval call. Week 3: build and test. Week 4: launch. Then a 60-day window to measure bookings.</p>
+
+        <hr class="reveal">
+
+        <h2 class="reveal">What It Costs</h2>
+
+        <p class="reveal">The setup fee is <strong>$3,500</strong>. The first two firms pay <strong>$2,500</strong> as founding clients, in exchange for an honest testimonial, whatever the results are. That covers the audit, five email sequences, the booking page, connection to your existing tools, and the 30-day build. It doesn't cover your email platform subscription (about $20–$50 a month).</p>
+
+        <p class="reveal">A rough way to weigh it: if an advisory retainer is $400 a month, one retained client is $4,800 a year. Two would cover the $3,500 fee in under five months. Your pricing and results will differ, so run your own numbers before you apply.</p>
+
+        <hr class="reveal">
+
+        <h2 class="reveal">What I'll Guarantee</h2>
+
+        <p class="reveal">I can't promise you'll sign retainers. That depends on your conversations with your clients. What I can promise is what I control:</p>
+
+        <ul class="stagger reveal">
+            <li>The build is live within 21 business days of your onboarding call, or you get a full refund, provided you've sent the export and approved the copy within 7 days.</li>
+            <li>If fewer than 3 clients have booked a review call within 60 days of launch, I'll rebuild the sequences at no charge until they do.</li>
+        </ul>
+
+        <hr class="reveal">
+
+        <h2 class="reveal">The Two Paths</h2>
+
+        <h3 class="reveal">Path 1: The Status Quo Roller Coaster</h3>
+        <p class="reveal">You continue relying solely on annual tax season spikes. You watch client files go cold every May, knowing potential advisory revenue is sitting untouched on your servers. You continue worrying about rising overhead and seasonal cash flow lulls — hoping organic word-of-mouth brings in enough new compliance clients to replace the ones who quietly drop off each year.</p>
+
+        <h3 class="reveal">Path 2: Installed Practice Infrastructure</h3>
+        <p class="reveal">You apply this week. By the end of the month, you have an audited client list, five check-ins you've approved, and a booking page. Some clients ignore it. Some say not now. A few reply, and in the quiet months you spend an hour with someone who already trusts you, talking about their business. Whether that becomes a retainer depends on that conversation, which is the work you're already good at.</p>
+
+        <hr class="reveal">
+
+        <h2 class="reveal">How to Get Started</h2>
+
+        <p class="reveal">To maintain strict quality control, I personally handle every database audit and communication build. Because of this constraint, I only accept 5 installations per month.</p>
+
+        <ol class="stagger reveal">
+            <li><strong>Apply:</strong> Complete a brief 2-minute Practice Audit Application.</li>
+            <li><strong>Review:</strong> I will confirm your practice has at least 80 active or dormant client files.</li>
+            <li><strong>Onboarding:</strong> If accepted, we hold a 20-minute call to collect firm preferences.</li>
+            <li><strong>Build:</strong> Over the next 30 days, I build and deploy your engine while you focus on client work.</li>
+        </ol>
+
+        <p class="reveal"><em>(Note: The founding-client rate of $2,500 applies to the first two of the five spots this month.)</em></p>
+
+        <div class="cta-wrap reveal">
+            <a href="YOUR_TALLY_APPLICATION_FORM_URL" class="cta-button">Click Here To Apply For Your Practice Audit</a>
+            <span class="cta-sub">2-minute application. No call required to apply.</span>
+        </div>
+
+        <hr class="reveal">
+
+        <p class="reveal"><strong>P.S.</strong> If you're worried about irritating your clients, you're right to be. That's why nothing goes out without your approval and every note comes from you, in your voice. If the first one doesn't read like something you'd have written, we don't send it.</p>
+
+        <div class="footer reveal">
+            <p>The Client Recovery Engine · <a href="https://recovery.campaignarchitect.qzz.io">recovery.campaignarchitect.qzz.io</a></p>
+        </div>
+
+    </div>
+
+    <script>
+        (function () {
+            // Reading progress bar
+            var bar = document.getElementById('progressBar');
+            var ticking = false;
+            window.addEventListener('scroll', function () {
+                if (!ticking) {
+                    window.requestAnimationFrame(function () {
+                        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                        var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+                        bar.style.width = pct + '%';
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            // Scroll reveals
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+                document.querySelectorAll('.reveal, .reveal-left, h2').forEach(function (el) {
+                    observer.observe(el);
+                });
+            } else {
+                // Fallback: reveal everything immediately
+                document.querySelectorAll('.reveal, .reveal-left, h2').forEach(function (el) {
+                    el.classList.add('visible');
+                });
+            }
+        })();
+    </script>
+
+</body>
+</html>

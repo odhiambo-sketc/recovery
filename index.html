@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Client Recovery Engine — Recover Dormant Clients Into Advisory Retainers</title>
-    <meta name="description" content="A done-for-you system that reactivates dormant accounting clients into year-round advisory retainers. $2,500 setup.">
+    <meta name="description" content="A done-for-you system that reactivates dormant accounting clients into year-round advisory retainers. $3,500 setup, $2,500 founding-client rate.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
@@ -140,6 +140,25 @@
             margin-bottom: 0.75rem;
         }
 
+        .lead-in {
+            font-size: 1rem;
+            color: var(--muted);
+            font-style: italic;
+            margin: 2.5rem 0 1rem;
+        }
+
+        .flow {
+            font-size: 1.1rem;
+            color: var(--accent-soft);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin: 1.5rem 0 2.5rem;
+            padding: 1rem 1.25rem;
+            border-left: 3px solid var(--accent);
+            background: rgba(15, 76, 92, 0.08);
+            border-radius: 4px;
+        }
+
         blockquote {
             border-left: 3px solid var(--accent);
             margin: 2rem 0;
@@ -149,7 +168,8 @@
             font-size: 1.05rem;
         }
 
-        blockquote p { margin-bottom: 0; }
+        blockquote p { margin-bottom: 0.75rem; }
+        blockquote p:last-child { margin-bottom: 0; }
 
         .beat {
             font-size: 1.5rem;
@@ -247,7 +267,6 @@
         .hero-load.delay-2 { animation-delay: 0.35s; }
         .hero-load.delay-3 { animation-delay: 0.55s; }
         .hero-load.delay-4 { animation-delay: 0.7s; }
-        .hero-load.delay-5 { animation-delay: 0.85s; }
 
         @keyframes heroIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -261,6 +280,7 @@
         .stagger.visible li:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.29s; }
         .stagger.visible li:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.37s; }
         .stagger.visible li:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.45s; }
+        .stagger.visible li:nth-child(7) { opacity: 1; transform: none; transition-delay: 0.53s; }
 
         @media (max-width: 600px) {
             .container { padding: 2.5rem 1.4rem; }
@@ -269,6 +289,7 @@
             h3 { font-size: 1.15rem; }
             p, li { font-size: 1.02rem; }
             .beat { font-size: 1.3rem; }
+            .flow { font-size: 1rem; padding: 0.85rem 1rem; }
             a.cta-button { padding: 1.1rem 1.6rem; font-size: 1.05rem; }
         }
 
@@ -299,21 +320,31 @@
 
         <hr class="hero-load delay-2">
 
-        <p class="hero-load delay-3">You didn't study for years, pass grueling exams, and start your own practice to become a cold-calling salesperson.</p>
+        <p class="hero-load delay-3">It's called <strong>The Client Recovery Engine</strong>.</p>
 
-        <p class="hero-load delay-4">You started because you love solving complex financial puzzles.</p>
+        <p class="hero-load delay-4">A done-for-you system for small accounting firms.</p>
 
-        <p class="reveal">You wanted to give business owners true peace of mind.</p>
+        <p class="reveal">It starts from one observation.</p>
 
-        <p class="reveal">Build a respected firm.</p>
+        <p class="reveal">Your existing clients are your best source of advisory work.</p>
 
-        <p class="reveal">Experience the freedom of being your own boss — no corporate bureaucracy, no 80-hour sweatshop weeks.</p>
+        <p class="reveal">And most of them don't hear from you between filing deadlines.</p>
+
+        <p class="reveal">You didn't study for years, pass grueling accounting exams, and start your own practice to become a cold-calling salesperson.</p>
+
+        <p class="reveal">You started because you love solving complex financial puzzles.</p>
+
+        <p class="reveal">You wanted to give business owners real peace of mind.</p>
+
+        <p class="reveal">Build a respected local practice.</p>
+
+        <p class="reveal">Have the freedom of being your own boss — no corporate bureaucracy, no senior partners to answer to, no 80-hour weeks in the off-season.</p>
 
         <p class="reveal">And you built something real.</p>
 
-        <p class="reveal">A solid roster of 80… 150… 300 business clients who rely on your numbers.</p>
+        <p class="reveal">A roster of 80… 150… 300 business clients who rely on your numbers.</p>
 
-        <p class="reveal">You handle their compliance. File their returns. Keep the authorities off their backs.</p>
+        <p class="reveal">You handle their annual compliance. File their business tax returns. Keep the tax authorities off their backs.</p>
 
         <p class="reveal">You turn your expertise into a living.</p>
 
@@ -321,47 +352,49 @@
 
         <p class="reveal">Tax season ends.</p>
 
-        <p class="reveal">The cash flow spike flattens.</p>
+        <p class="reveal">The cash-flow spike flattens.</p>
 
-        <p class="reveal">The momentum stops. Your office goes dead quiet.</p>
+        <p class="reveal">The momentum stops. The office goes quiet.</p>
 
-        <p class="reveal">Dozens of client files sit dormant on your server until next year's filing deadline.</p>
+        <p class="reveal">Apart from the occasional payroll question or ad-hoc bookkeeping call, dozens of client files sit untouched until next year's filing deadline.</p>
 
-        <p class="reveal">And you start doing the late-night mental math.</p>
+        <p class="reveal">And you start doing the late-night math.</p>
 
-        <p class="reveal">Payroll. Software subscriptions. Office lease. Partner draws…</p>
+        <p class="reveal">Payroll for four staff. Software subscriptions that keep going up. The lease. Your own draw.</p>
 
-        <p class="reveal">Here's the thing nobody tells you when you run a small firm.</p>
+        <p class="reveal">Here's what nobody tells you when you run a small firm.</p>
 
-        <p class="reveal"><strong>Relying solely on annual compliance filings is a trap.</strong></p>
+        <p class="reveal"><strong>Relying only on annual compliance filings is a trap.</strong></p>
 
-        <p class="reveal">One lost corporate account.</p>
+        <p class="reveal">One lost key account.</p>
 
-        <p class="reveal">One key employee resignation.</p>
+        <p class="reveal">One resignation.</p>
 
         <p class="reveal">One slow summer.</p>
 
-        <p class="reveal">And the floor underneath your cash flow starts to crack.</p>
+        <p class="reveal">And the floor under your cash flow starts to crack.</p>
 
-        <p class="reveal">You know there is untapped revenue sitting inside your existing database.</p>
+        <p class="reveal">You've probably felt this for months.</p>
 
-        <p class="reveal">You know half your compliance clients <em>should</em> be paying you for quarterly management accounts, tax planning, or fractional CFO advisory.</p>
+        <p class="reveal">You know there's revenue sitting in your own client list.</p>
 
-        <p class="reveal">But every time you looked at "growth strategies" for accountants, you walked away disgusted.</p>
+        <p class="reveal">You know a good share of your compliance clients should be paying you for quarterly tax planning, cash-flow forecasting, or fractional CFO work.</p>
 
-        <p class="reveal">Cheesy social media templates.</p>
+        <p class="reveal">But every time you looked at "growth strategies" or "marketing agencies for accountants," you walked away disgusted.</p>
+
+        <p class="reveal">Cheesy social templates.</p>
 
         <p class="reveal">Aggressive cold outreach.</p>
 
-        <p class="reveal">Bloated CRM subscriptions that felt like a second job.</p>
+        <p class="reveal">CRM software with a 12-week setup that felt like a second job.</p>
 
-        <p class="reveal">Worse — those tactics felt like a direct threat to the most valuable asset your practice owns.</p>
+        <p class="reveal">Worse, all of it felt like a threat to the most valuable thing your practice owns.</p>
 
-        <p class="reveal"><strong>Your professional reputation.</strong></p>
+        <p class="reveal"><strong>Your reputation and your clients' trust.</strong></p>
 
-        <p class="reveal">So you pushed it aside and went back to work.</p>
+        <p class="reveal">So you set it aside and went back to work.</p>
 
-        <p class="reveal"><strong>But what if there was a way to systematically reactivate your dormant client files — using the list you already have — with zero sales calls, zero extra admin work, and zero reputation risk?</strong></p>
+        <p class="reveal"><strong>But what if you could turn quiet compliance clients into advisory retainers, using the client list you already have — without a sales call, without a new piece of software to learn, and without sending anything you haven't read and approved?</strong></p>
 
         <hr class="reveal">
 
@@ -375,7 +408,7 @@
 
         <p class="reveal">They do nothing for the clients you already have.</p>
 
-        <p class="reveal">Clients who trust you. Who aren't hearing from you between filing deadlines. Who may be paying someone else for cash-flow help you could give them.</p>
+        <p class="reveal">People who trust you. Who don't hear from you between filing deadlines. Who may be paying someone else for cash-flow help you could give them.</p>
 
         <p class="reveal">The Engine doesn't look for strangers.</p>
 
@@ -383,216 +416,279 @@
 
         <hr class="reveal">
 
+        <h2 class="reveal">Why Good Practices Go Quiet Between Filing Deadlines</h2>
+
+        <p class="reveal">During tax season you and your staff run at capacity.</p>
+
+        <p class="reveal">You don't have the bandwidth to pitch extra services — even when you spot an obvious planning opportunity for a client.</p>
+
+        <p class="reveal">When it ends, you're exhausted.</p>
+
+        <p class="reveal">The last thing you want is to call a client you haven't spoken to in six months and try to upsell them.</p>
+
+        <p class="reveal">It feels awkward.</p>
+
+        <p class="reveal">It feels needy.</p>
+
+        <p class="reveal">It feels like selling — and you'd rather lose the revenue than look desperate.</p>
+
+        <p class="reveal">So the relationship stays transactional.</p>
+
+        <p class="reveal">The client sees you as an annual expense the law requires, not a year-round advisor.</p>
+
+        <p class="reveal">They hand cash-flow problems to software or a generic consultant when you could have solved them in two hours.</p>
+
+        <p class="reveal">Some drift away, assuming you're too busy for anything beyond the return.</p>
+
+        <p class="reveal">Your clients don't lack the need.</p>
+
+        <p class="reveal">Your firm lacks the quiet infrastructure to stay in touch between deadlines without pulling you away from client work.</p>
+
+        <p class="reveal"><strong>That's what I build.</strong></p>
+
+        <hr class="reveal">
+
         <h2 class="reveal">I'm Not a CPA. I'm a Systems Architect.</h2>
 
-        <p class="reveal">My background isn't in tax law.</p>
+        <p class="reveal">My background isn't in auditing or tax law.</p>
 
-        <p class="reveal">I come from the world of complex systems engineering.</p>
+        <p class="reveal">I come from complex systems engineering.</p>
 
-        <p class="reveal">A few years ago, a severe head injury upended my previous trajectory.</p>
+        <p class="reveal">A few years ago, after a severe head injury upended my previous trajectory, my brain was locked into survival mode.</p>
 
-        <p class="reveal">My brain was locked into survival mode.</p>
+        <p class="reveal">I couldn't handle chaos, noise, or high-pressure corporate games.</p>
 
-        <p class="reveal">I couldn't handle chaos or high-pressure corporate games.</p>
-
-        <p class="reveal">To survive, I built a hyper-focused discipline around order, structure, and silent infrastructure.</p>
+        <p class="reveal">To survive, I built a hyper-focused personal discipline around order, structure, and silent infrastructure.</p>
 
         <p class="reveal">I learned to build backend architectures that run smoothly in the background without needing constant human intervention.</p>
 
-        <p class="reveal">When I started looking into professional service firms, I recognized a pattern.</p>
+        <p class="reveal">I've spent the last six years building direct-response systems for my own businesses and for early-stage founders.</p>
 
-        <p class="reveal">Independent accountants were master practitioners.</p>
+        <p class="reveal">Sales letters, funnels, and outreach engines.</p>
 
-        <p class="reveal">But their practice operations were completely exposed to seasonal volatility.</p>
+        <p class="reveal">The Client Recovery Engine is the same architecture, applied to accounting firms.</p>
 
-        <p class="reveal">They didn't suffer from a lack of skill.</p>
+        <p class="reveal">When I started looking into professional service firms, I recognized a pattern among independent accountants.</p>
 
-        <p class="reveal">They suffered because traditional marketing felt like a betrayal of their craft.</p>
+        <p class="reveal">They were master practitioners whose practice operations were fully exposed to seasonal swings.</p>
 
-        <p class="reveal">And manual client follow-up was mathematically impossible with their workload.</p>
+        <p class="reveal">They didn't lack skill or satisfied clients.</p>
 
-        <p class="reveal">I realized accountants didn't need marketing advice.</p>
+        <p class="reveal">Traditional marketing felt like a betrayal of their craft.</p>
 
-        <p class="reveal">They needed a quiet, automated pipeline installed inside their practice.</p>
+        <p class="reveal">And manual follow-up was impossible on their workload.</p>
 
-        <p class="reveal">That is why I created <strong>The Client Recovery Engine</strong>.</p>
+        <p class="reveal">I realized accountants didn't need marketing advice or sales coaching.</p>
+
+        <p class="reveal">They needed a quiet, automated pipeline installed inside the practice — one that reaches out to existing clients with helpful, professional communication that opens the door to higher-value work.</p>
+
+        <p class="reveal">That's why I built <strong>The Client Recovery Engine</strong>.</p>
 
         <hr class="reveal">
 
         <h2 class="reveal">What Is The Client Recovery Engine?</h2>
 
-        <p class="reveal">It is a done-for-you client retention and reactivation system installed directly inside your existing workflow.</p>
+        <p class="reveal">A done-for-you client reactivation system, installed on top of the way your firm already works.</p>
 
-        <p class="reveal"><strong>Not a CRM software subscription</strong> you have to train your staff to use.</p>
+        <p class="reveal">Not a CRM your staff has to learn.</p>
 
-        <p class="reveal"><strong>Not a marketing course</strong> or a pile of PDFs.</p>
+        <p class="reveal">Not a marketing course or a pile of PDFs for your practice manager.</p>
 
-        <p class="reveal"><strong>Not a social media agency retainer</strong> posting generic quotes on LinkedIn.</p>
+        <p class="reveal">Not a social media agency posting generic quotes on LinkedIn.</p>
 
-        <p class="reveal">Here is how it breaks down.</p>
+        <p class="reveal"><strong>I build it. You have the conversations.</strong></p>
 
-        <h3 class="reveal">Step 1: The Client-List Audit</h3>
-        <p class="reveal">We start with your compliance-only clients.</p>
-        <p class="reveal">Current clients who file with you once a year and buy nothing else.</p>
-        <p class="reveal">(Lapsed clients — no filing in 12+ months — are a second list with a different message.)</p>
-        <p class="reveal">I audit this list to identify who looks ready for more based on their last filing date, entity type, and current services.</p>
+        <p class="flow reveal">Client-list audit → Check-ins in your voice → Booked review calls</p>
+
+        <h3 class="reveal">1. The Client-List Audit</h3>
+
+        <p class="reveal">I go through the client export you send me and sort your clients into two lists.</p>
+
         <ul class="stagger reveal">
-            <li><strong>I do:</strong> All the data segmentation, list scrubbing, and opportunity analysis.</li>
-            <li><strong>You do:</strong> Hand over a secure export of your past client list. That's it.</li>
+            <li><strong>Compliance-only clients.</strong> Current clients who file with you once a year and buy nothing else. This is the main list.</li>
+            <li><strong>Lapsed clients.</strong> No filing with you in the past 12–36 months. A smaller second list, with a different message.</li>
         </ul>
 
-        <h3 class="reveal">Step 2: Check-ins in Your Voice</h3>
-        <p class="reveal">I draft and install five short email sequences sent directly under your name.</p>
-        <p class="reveal">Written specifically for accountants — calm, professional language.</p>
-        <p class="reveal">Thoughtful 1-on-1 advisor notes, not marketing broadcasts.</p>
-        <p class="reveal">Each one highlights a fiscal checkpoint, an upcoming tax law shift, or a proactive health check.</p>
+        <p class="reveal">I work from what's in your export.</p>
+
+        <p class="reveal">Last filing date. Services bought. Fees billed. Entity type. Years with you.</p>
+
+        <p class="reveal">From that I flag the clients most likely to be a fit for planning or advisory work.</p>
+
+        <p class="reveal">I can't see inside a client's business, so you make the final call on who's on the list.</p>
+
         <ul class="stagger reveal">
-            <li><strong>I do:</strong> Write 100% of the copy, set up the delivery triggers, and connect it to your existing tools (Xero, QuickBooks, Mailchimp, or direct SMTP).</li>
-            <li><strong>You do:</strong> Review and approve the copy in a single 20-minute call.</li>
+            <li><strong>I do:</strong> the sorting, list cleanup, and opportunity flags.</li>
+            <li><strong>You do:</strong> send a secure export of your client list, and review the final list before anything goes out.</li>
         </ul>
 
-        <h3 class="reveal">Step 3: Booked Conversations</h3>
-        <p class="reveal">When dormant clients receive these check-ins, they don't feel sold to.</p>
-        <p class="reveal">They feel cared for.</p>
-        <p class="reveal">The sequences guide interested clients straight to your calendar.</p>
-        <p class="reveal">An "Annual Review Call" — or a pre-packaged advisory tier: Quarterly Tax Planning, Fractional CFO, Monthly Bookkeeping upgrades.</p>
+        <h3 class="reveal">2. Check-Ins in Your Voice</h3>
+
+        <p class="reveal">I write five short email sequences in your voice, sent from your address.</p>
+
+        <p class="reveal">They read like a note from a thoughtful advisor, not a marketing broadcast.</p>
+
+        <p class="reveal">A fiscal checkpoint. A tax-law change that matters to that client. A simple "has anything changed?" check.</p>
+
         <ul class="stagger reveal">
-            <li><strong>I do:</strong> Manage the calendar integration and tracking architecture.</li>
-            <li><strong>You do:</strong> Conduct standard advisory reviews and collect monthly retainer fees.</li>
+            <li><strong>I do:</strong> write every word and set up the sending.</li>
+            <li><strong>You do:</strong> approve the copy in one 20-minute call. Nothing goes out until you say so.</li>
         </ul>
 
-        <hr class="reveal">
-
-        <p class="objection reveal">"We don't have time for another tool."</p>
-        <p class="reveal">Your total time is one client-list export, one 20-minute approval call, and the review calls clients book.</p>
-
-        <p class="objection reveal">"We tried a CRM and nobody used it."</p>
-        <p class="reveal">That usually happens because a CRM asks busy people to log data every day.</p>
-        <p class="reveal">This asks nobody to log anything.</p>
-        <p class="reveal">It runs from one export. Replies land in your inbox. Bookings land in your calendar.</p>
+        <p class="lead-in reveal">Before Step 3, two questions every careful partner asks.</p>
 
         <p class="objection reveal">"Won't this annoy my clients?"</p>
+
         <p class="reveal">Nothing goes out that you haven't read and approved.</p>
+
         <p class="reveal">Every note comes from your address, in your voice.</p>
-        <p class="reveal">Here is exactly what one looks like.</p>
+
+        <p class="reveal">Here's the kind of note I mean.</p>
 
         <blockquote class="reveal-left">
-            <p>"Hi [Name], your filing went in back in [month] and I noticed we haven't spoken since. Before year-end is a good time to check whether anything about your numbers has changed and whether there's a tax-planning step worth taking now. If it's useful, I've set aside time on [dates]: [link]."</p>
+            <p>Hi [Name],</p>
+            <p>Your return went in back in [month], and I realized we haven't spoken since. Before year-end is a good time to check whether anything about your numbers has changed and whether there's a tax-planning step worth taking now. If it's useful, I've set aside time on [dates]: [link]</p>
+            <p>[Your name]</p>
         </blockquote>
 
-        <p class="reveal">Replies go to your inbox.</p>
+        <p class="reveal">Replies go straight to your inbox.</p>
+
         <p class="reveal">Anyone who asks to stop is removed immediately.</p>
 
         <p class="objection reveal">"What happens to my client data?"</p>
-        <p class="reveal">I sign a confidentiality agreement before touching your data.</p>
-        <p class="reveal">The export is stored securely, used only for this build, and deleted the moment the sequences are approved.</p>
-        <p class="reveal">You approve everything that goes out. I don't claim to ensure compliance — that remains your firm's responsibility.</p>
 
-        <p class="objection reveal">"You don't have a case study. Why would I be your first client?"</p>
+        <p class="reveal">The export is stored on an encrypted drive, used only to build your lists and sequences, and deleted within 30 days of launch or on your request, whichever comes first.</p>
 
-        <p class="reveal">You're right.</p>
+        <p class="reveal">I sign a confidentiality agreement before you send anything.</p>
 
-        <p class="reveal">I don't.</p>
+        <p class="reveal">You remain the data controller.</p>
 
-        <p class="reveal">So here's what you're getting instead.</p>
+        <p class="reveal">I process the export only on your instruction.</p>
 
-        <p class="reveal"><strong>The work itself, before you pay.</strong></p>
+        <p class="reveal">You decide what your own confidentiality and consent obligations allow, and you approve every message before it goes out.</p>
 
-        <p class="reveal">Apply and I'll send you a redacted sample sequence — a real one, from a real build.</p>
+        <p class="reveal">I'm not a CPA or a lawyer, so I don't claim to make anything "compliant" on your behalf.</p>
 
-        <p class="reveal">You'll see exactly what would go out under your name.</p>
+        <h3 class="reveal">3. Booked Conversations</h3>
 
-        <p class="reveal">If it doesn't read like something you'd send, you don't buy.</p>
+        <p class="reveal">Replies land in your inbox.</p>
 
-        <p class="reveal">That's a better test than a testimonial anyway.</p>
+        <p class="reveal">Clients who want to talk click a link to a booking page for an annual review call, tied to your calendar.</p>
 
-        <p class="reveal">A testimonial tells you what happened for someone else.</p>
+        <p class="reveal">I set up the page and the tracking, so you can see who opened, who replied, and who booked.</p>
 
-        <p class="reveal">The sample tells you what will happen for you.</p>
+        <ul class="stagger reveal">
+            <li><strong>I do:</strong> build the booking page, connect your calendar, and set up the tracking report.</li>
+            <li><strong>You do:</strong> take the calls. If it fits, offer one of the three advisory packages and collect the monthly fee.</li>
+        </ul>
 
-        <p class="reveal"><strong>The trade, not a discount.</strong></p>
+        <p class="lead-in reveal">Two more objections you're probably already raising.</p>
 
-        <p class="reveal">The first five firms get my full attention and my best work — because your result is my case study.</p>
+        <p class="objection reveal">"We don't have time to review copy or learn a new tool."</p>
 
-        <p class="reveal">Your name doesn't go on it unless you want it to.</p>
+        <p class="reveal">Before launch, I need three things from you.</p>
 
-        <p class="reveal">That's the deal.</p>
+        <p class="reveal">The client-list export.</p>
 
-        <p class="reveal">You're not a guinea pig. You're the reason the next ten firms hear about this.</p>
+        <p class="reveal">A 20-minute onboarding call.</p>
 
-        <p class="reveal"><strong>The risk, moved off you.</strong></p>
+        <p class="reveal">A 20-minute call to approve the copy — plus the time it takes you to read it.</p>
 
-        <p class="reveal">If the build isn't live within 21 business days, full refund.</p>
+        <p class="reveal">After launch, your time goes to the review calls clients book.</p>
 
-        <p class="reveal">If fewer than 3 clients book a review call within 60 days of launch, I rebuild the sequences at no charge until they do.</p>
+        <p class="reveal">The sequences run from the email platform you already use, so there's no new tool to learn.</p>
 
-        <p class="reveal">And the worst case isn't a refund.</p>
+        <p class="objection reveal">"We tried a CRM and nobody used it."</p>
 
-        <p class="reveal">It's five approved sequences, an audited client list, and a booking page you own permanently — reusable every year, with any client base.</p>
+        <p class="reveal">That usually happens because a CRM asks busy people to log data every day.</p>
 
-        <p class="reveal">I can't show you my results. I can show you my work before you pay, take the build risk off your plate, and make sure that even the worst case leaves you with something you keep.</p>
+        <p class="reveal">This asks nobody to log anything.</p>
 
-        <p class="reveal">If that's not enough, I'd rather you walk away now than be disappointed in 30 days.</p>
+        <p class="reveal">It runs from one export.</p>
 
-        <hr class="reveal">
-
-        <h2 class="reveal">The Evidence I Do Have</h2>
-
-        <p class="reveal">One accounting firm moved from ad-hoc follow-up to a systematic process.</p>
-
-        <p class="reveal">Signed-engagement rate rose from <strong>20% to 84%</strong>.</p>
-
-        <p class="reveal"><strong>$250,000</strong> in new annual recurring revenue over six months.</p>
-
-        <p class="reveal">Vendor-reported, not independently audited — and they were following up on prospects, not reactivating dormant clients.</p>
-
-        <p class="reveal">I'm showing it for the principle.</p>
-
-        <p class="reveal">Consistent follow-up recovers work that would otherwise go quiet.</p>
-
-        <p class="reveal">Not so you'll expect those numbers.</p>
-
-        <p class="reveal">What I will do is track yours.</p>
-
-        <p class="reveal">And give you the real numbers, good or bad.</p>
+        <p class="reveal">Replies land in your inbox and bookings land in your calendar.</p>
 
         <hr class="reveal">
 
-        <h2 class="reveal">Everything Included in Your 30-Day Setup</h2>
+        <h2 class="reveal">What I Can Show You, and What I Can't</h2>
+
+        <p class="objection reveal">"How do I know this will actually produce clients?"</p>
+
+        <p class="reveal">You don't, and nobody honest can promise it.</p>
+
+        <p class="reveal">Here's what I can say.</p>
+
+        <p class="reveal">I don't have a case study of my own yet.</p>
+
+        <p class="reveal">That's why the first two firms get a founding-client rate.</p>
+
+        <p class="reveal">The closest evidence I've found is a case study published by The Bottom Line Company about Nguyen &amp; Company, CPA.</p>
+
+        <p class="reveal">They moved from ad-hoc follow-up to a systematic process.</p>
+
+        <p class="reveal">Their signed-engagement rate rose from <strong>20% to 84%</strong> — contributing to <strong>$250,000</strong> in new annual recurring revenue over six months.</p>
+
+        <p class="reveal">You can read it here: <a href="https://thebottomline.company/case-studies/nguyen-and-company-cpa" target="_blank" rel="noopener">thebottomline.company/case-studies/nguyen-and-company-cpa</a></p>
+
+        <p class="reveal">Two caveats, and they matter.</p>
+
+        <p class="reveal">First, the figures are vendor-reported.</p>
+
+        <p class="reveal">The Bottom Line Company published them, not an independent auditor.</p>
+
+        <p class="reveal">Second, that firm was following up on inbound prospects generated by paid ads, not reactivating dormant clients.</p>
+
+        <p class="reveal">Different population, same principle.</p>
+
+        <p class="reveal">I'm showing it because it supports the principle.</p>
+
+        <p class="reveal"><strong>Consistent, systematic follow-up recovers work that would otherwise go quiet.</strong></p>
+
+        <p class="reveal">I'm not showing it so you'll expect those numbers.</p>
+
+        <p class="reveal">What I will do is track your results and give you the real numbers, good or bad.</p>
+
+        <p class="reveal">Booked calls are the first number to watch.</p>
+
+        <p class="reveal">Signed retainers depend on the conversation you have with your client — which is the part you're already good at.</p>
+
+        <hr class="reveal">
+
+        <h2 class="reveal">What's Included</h2>
 
         <ol class="stagger reveal">
-            <li><strong>A client-list audit:</strong> Who's compliance-only, who's lapsed, who looks ready for more.</li>
-            <li><strong>Five short email sequences</strong> in your voice.</li>
-            <li><strong>Connected to your tools:</strong> Full integration with your existing practice software (Xero, QuickBooks, Mailchimp, or direct SMTP).</li>
-            <li><strong>A booking page</strong> for annual review calls, so clients can seamlessly schedule without phone tag.</li>
-            <li><strong>Three advisory packages</strong> scoped and priced so you can confidently offer quarterly tax planning and CFO services without guessing.</li>
-            <li><strong>21-Day Installation Guarantee:</strong> If I don't have the entire engine built, tested, and ready to launch within 21 business days, you don't pay a penny more.</li>
+            <li><strong>A client-list audit:</strong> who's compliance-only, who's lapsed, who looks ready for more.</li>
+            <li><strong>Five short email sequences in your voice</strong>, which you approve before anything is sent.</li>
+            <li><strong>Connection to the tools you already use:</strong> your email platform for sending, and your practice software or a spreadsheet for the client list.</li>
+            <li><strong>A booking page</strong> for annual review calls, tied to your calendar.</li>
+            <li><strong>Three advisory packages</strong>, scoped and priced, so you aren't guessing when a client says yes.</li>
+            <li><strong>A tracking report:</strong> who opened, who replied, who booked.</li>
+            <li><strong>A 30-day build:</strong> week 1, client-list audit. Week 2, copy and your approval call. Week 3, build and test. Week 4, launch. Then the 60-day window in the guarantee below.</li>
         </ol>
-
-        <p class="reveal">The 30-day timeline:</p>
-        <p class="reveal">Week 1: audit.</p>
-        <p class="reveal">Week 2: copy and approval call.</p>
-        <p class="reveal">Week 3: build and test.</p>
-        <p class="reveal">Week 4: launch.</p>
-        <p class="reveal">Then a 60-day window to measure bookings.</p>
 
         <hr class="reveal">
 
         <h2 class="reveal">What It Costs</h2>
 
-        <p class="reveal">The setup fee is <strong>$2,500</strong>.</p>
+        <p class="reveal">The setup fee is <strong>$3,500</strong>.</p>
 
-        <p class="reveal">That covers the audit, five email sequences, the booking page, connection to your existing tools, and the 30-day build.</p>
+        <p class="reveal">It's a one-time fee, and I don't charge monthly after that.</p>
 
-        <p class="reveal">It doesn't cover your email platform subscription (about $20–$50 a month).</p>
+        <p class="reveal">It covers everything in the list above.</p>
+
+        <p class="reveal">It doesn't cover your email platform subscription, if you don't already have one.</p>
+
+        <p class="reveal">The first two firms I accept pay a founding-client rate of <strong>$2,500</strong>, in exchange for an honest testimonial — whatever the results are.</p>
+
+        <p class="reveal">Those two slots are part of my five monthly slots, not on top of them.</p>
 
         <p class="reveal">A rough way to weigh it.</p>
 
-        <p class="reveal">If an advisory retainer is $400 a month, one retained client is $4,800 a year.</p>
+        <p class="reveal">If an advisory retainer is $400 a month (an illustration, not a promise), one retained client is $4,800 a year.</p>
 
-        <p class="reveal">Two would cover the $2,500 fee in under four months.</p>
+        <p class="reveal">Two would cover the $3,500 fee in under five months.</p>
 
-        <p class="reveal">Your pricing and results will differ. Run your own numbers before you apply.</p>
+        <p class="reveal">Your pricing and results will differ, so run your own numbers before you apply.</p>
 
         <div class="cta-wrap reveal">
             <a href="https://tally.so/r/7XqZM6" class="cta-button" target="_blank" rel="noopener">Apply For Your Practice Audit</a>
@@ -607,58 +703,83 @@
 
         <p class="reveal">That depends on your conversations with your clients.</p>
 
-        <p class="reveal">What I can promise is what I control.</p>
+        <p class="reveal">I can promise what I control.</p>
 
-        <ul class="stagger reveal">
-            <li>The build is live within 21 business days of your onboarding call — or you get a full refund, provided you've sent the export and approved the copy within 7 days.</li>
-            <li>If fewer than 3 clients have booked a review call within 60 days of launch, I'll rebuild the sequences at no charge until they do.</li>
-        </ul>
+        <p class="reveal"><strong>The build goes live within 30 business days of your onboarding call, or you get a full refund.</strong></p>
+
+        <p class="reveal">The condition: you send the client-list export and approve the copy within 7 business days of the call.</p>
+
+        <p class="reveal">If you send those on time and I miss the build deadline, you don't pay.</p>
+
+        <p class="reveal"><strong>If fewer than 3 clients have booked a review call within 60 days of launch, I'll rebuild the sequences at no charge — and keep rebuilding them until they do.</strong></p>
+
+        <p class="reveal">That's the whole guarantee.</p>
+
+        <p class="reveal">No fine print. No "subject to."</p>
+
+        <p class="reveal">Two commitments I can keep, stated plainly.</p>
 
         <hr class="reveal">
 
-        <h2 class="reveal">The Two Paths</h2>
+        <h2 class="reveal">Two Paths for Your Practice</h2>
+
+        <p class="reveal">Looking toward the next few quarters, your practice has two clear choices.</p>
 
         <h3 class="reveal">Path 1: The Status Quo Roller Coaster</h3>
-        <p class="reveal">You continue relying solely on annual tax season spikes.</p>
-        <p class="reveal">You watch client files go cold every May — knowing potential advisory revenue is sitting untouched on your servers.</p>
-        <p class="reveal">You keep worrying about rising overhead and seasonal cash flow lulls.</p>
-        <p class="reveal">Hopeful that organic word-of-mouth brings in enough new compliance clients to replace the ones who quietly drop off each year.</p>
 
-        <h3 class="reveal">Path 2: Installed Practice Infrastructure</h3>
+        <p class="reveal">You keep relying on the annual tax-season spike.</p>
+
+        <p class="reveal">You watch client files go cold every May, knowing there's advisory revenue sitting untouched on your server.</p>
+
+        <p class="reveal">You keep worrying about rising overhead, software price hikes, and seasonal cash-flow lulls — hoping word-of-mouth brings in enough new compliance clients to replace the ones who quietly drop off each year.</p>
+
+        <h3 class="reveal">Path 2: A Quiet System Inside Your Practice</h3>
+
         <p class="reveal">You apply this week.</p>
-        <p class="reveal">By the end of the month, you have an audited client list, five check-ins you've approved, and a booking page.</p>
+
+        <p class="reveal">By the end of the month you have an audited client list, five check-ins you've approved, and a booking page.</p>
+
         <p class="reveal">Some clients ignore it.</p>
+
         <p class="reveal">Some say not now.</p>
-        <p class="reveal">A few reply.</p>
-        <p class="reveal">And in the quiet months you spend an hour with someone who already trusts you, talking about their business.</p>
-        <p class="reveal">Whether that becomes a retainer depends on that conversation.</p>
-        <p class="reveal">Which is the work you're already good at.</p>
+
+        <p class="reveal">A few reply — and in the quiet months you spend an hour with someone who already trusts you, talking about their business.</p>
+
+        <p class="reveal">Whether that becomes a retainer depends on that conversation, which is the work you're already good at.</p>
+
+        <p class="reveal">One path is another year of the same seasonal worry.</p>
+
+        <p class="reveal">The other is a quiet start on owning your firm's growth.</p>
 
         <hr class="reveal">
 
-        <h2 class="reveal">How to Get Started</h2>
+        <h2 class="reveal">How to Apply</h2>
 
-        <p class="reveal">To maintain strict quality control, I personally handle every database audit and communication build.</p>
-        <p class="reveal">Because of that constraint, I only accept 5 installations per month.</p>
+        <p class="reveal">I build every audit and every set of communications by hand, so I take 5 practices per month.</p>
+
+        <p class="reveal">When those slots are filled, applications close until the following month.</p>
 
         <ol class="stagger reveal">
-            <li><strong>Apply:</strong> Complete a brief 2-minute Practice Audit Application.</li>
-            <li><strong>Review:</strong> I will confirm your practice has at least 50 active or dormant client files.</li>
-            <li><strong>Onboarding:</strong> If accepted, we hold a 20-minute call to collect firm preferences.</li>
-            <li><strong>Build:</strong> Over the next 30 days, I build and deploy your engine while you focus on client work.</li>
+            <li><strong>Apply:</strong> Complete a brief 2-minute Practice Audit Application using the link below.</li>
+            <li><strong>Review:</strong> I review it to confirm your practice has at least 80 client files.</li>
+            <li><strong>Onboarding:</strong> If accepted, we hold a 20-minute onboarding call to cover your firm's preferences.</li>
+            <li><strong>Build:</strong> Over the next 30 days I build and launch the system while you keep doing client work.</li>
         </ol>
 
         <div class="cta-wrap reveal">
-            <a href="https://tally.so/r/7XqZM6" class="cta-button" target="_blank" rel="noopener">Click Here To Apply For Your Practice Audit</a>
+            <a href="https://tally.so/r/7XqZM6" class="cta-button" target="_blank" rel="noopener">Apply For Your Practice Audit</a>
             <span class="cta-sub">2-minute application. No call required to apply.</span>
         </div>
 
         <hr class="reveal">
 
         <p class="reveal"><strong>P.S.</strong> If you're worried about irritating your clients, you're right to be.</p>
+
         <p class="reveal">That's why nothing goes out without your approval.</p>
-        <p class="reveal">Every note comes from you, in your voice.</p>
-        <p class="reveal">If the first one doesn't read like something you'd have written, we don't send it.</p>
+
+        <p class="reveal">And every note comes from you, in your voice.</p>
+
+        <p class="reveal">If the first one doesn't read like something you'd have written, it doesn't go out.</p>
 
         <div class="footer reveal">
             <p>The Client Recovery Engine · <a href="https://recovery.campaignarchitect.qzz.io">recovery.campaignarchitect.qzz.io</a></p>
